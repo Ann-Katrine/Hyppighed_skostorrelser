@@ -43,7 +43,7 @@
 		
 		imagefilledrectangle($img, $x, 320, $y, 320-($virker * 35), $fg);
 		imagerectangle($img, $x, 320, $y, 320-($virker * 35), $bg);
-		imagettftext($img, 13, 0, $tal, 340, $bg, $font, ($size)); //--------
+		imagettftext($img, 13, 0, $tal, 340, $bg, $font, ($size)); // text hen ad x-aksen
 	}
 
 	// Draw x-axis
