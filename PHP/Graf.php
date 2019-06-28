@@ -15,7 +15,7 @@
 	$white = imagecolorallocate($img, 255, 255, 255);
 	$red = imagecolorallocate($img, 255, 153, 153);
 	$text = 'hello';
-	$font = 'arial.ttf';
+	$font = 'C:/wamp64/www/Hyppighed_skostorrelser/PHP/arial.ttf';
 
 	// Set background colour to white
 	imagefill($img, 0, 0, $white);
@@ -46,7 +46,7 @@
 		if($i < 1)
 		{$in += 1;}
 		imageline($img, 20, 390-(35 * $in), 790, 390-(35 * $in), $black);
-		imagettftext($img, 0, 390-(35 * $in), 790, 390-(35 * $in), $white, $font, $text); //--------------------
+		imagettftext($img, 12, 0, 600, 100-(35 * $in), $white, $font, $text); //-----------------
 		$in += 1;
 	}
 
