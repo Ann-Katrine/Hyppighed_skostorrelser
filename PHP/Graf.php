@@ -14,7 +14,10 @@
 	$black = imagecolorallocate($img, 0, 0, 0);
 	$white = imagecolorallocate($img, 255, 255, 255);
 	$red = imagecolorallocate($img, 255, 153, 153);
-	$text = 'hello';
+
+	// text
+	$text = "-1";
+	$size = "36";
 	$font = 'C:/wamp64/www/Hyppighed_skostorrelser/PHP/arial.ttf';
 
 	// Set background colour to white
@@ -26,18 +29,21 @@
 	// antal fra de forskellige skostørrelser
 	$x = 40;
 	$y = 90;
+	$tal = 55;
 	for($i = 1; $i < ($hvor_mange + 1); $i++){
-		get_sko_value($i, $x, $y, $conn, $black, $red, $img);
+		get_sko_value($i, $x, $y, $conn, $black, $red, $img, $font, $size++, $tal);
 		$x += 70;
 		$y += 70;
+		$tal += 70;
 	}
 
-	function get_sko_value($sko, $x, $y, $conn, $bg, $fg, $img) {
+	function get_sko_value($sko, $x, $y, $conn, $bg, $fg, $img, $font, $size, $tal) {
 		$query = $conn -> query("SELECT COUNT(bruger.skostorrelse) as num from bruger where LEFT (bruger.skostorrelse, 1) = ".$sko);
 		$virker = mysqli_fetch_assoc($query)["num"];
 		
 		imagefilledrectangle($img, $x, 320, $y, 320-($virker * 35), $fg);
 		imagerectangle($img, $x, 320, $y, 320-($virker * 35), $bg);
+		imagettftext($img, 13, 0, $tal, 340, $bg, $font, ($size)); //--------
 	}
 
 	// Draw x-axis
@@ -46,7 +52,7 @@
 		if($i < 1)
 		{$in += 1;}
 		imageline($img, 20, 390-(35 * $in), 790, 390-(35 * $in), $black);
-		imagettftext($img, 12, 0, 600, 100-(35 * $in), $white, $font, $text); //-----------------
+		imagettftext($img, 13, 0, 3, 394-(35 * $in), $black, $font, ($text += 1)); // text ned ad y-aksen
 		$in += 1;
 	}
 
