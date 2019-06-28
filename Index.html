@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<title>MonthCalendar</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link href="CSS/CSS.css" rel="stylesheet" type="text/css">
+	</head>
+	<body onload="get_sko_storrelse()">
+		<div class="row1">
+			<!-- Navbar -->
+			<div class="navbar">
+				<ul>
+					<li>
+						<a class="bigger_header"><i>Skomajer</i></a>
+					</li>
+					<li>
+						<a></a>
+					</li>
+					<li>
+						<a href="Index.html" class="active">indsæt info</a>
+					</li>
+					<li>
+						<a href="listinfo.html">list med info</a>
+					</li>
+					<li>
+						<a href="tabelinfo.html">tabel med info</a>
+					</li>
+				</ul>
+			</div>	
+			
+			<div class="Site">
+				<div class="Site_imidten">
+					<div class="imidten">
+						<a>Navn: </a>
+						<input type="text" id="navn" placeholder="Indtast navn">
+						<br>
+						<a>Email: </a>
+						<input type="mail" id="mail" placeholder="Instast mail">
+						<br>
+						<a>Alder: </a>
+						<input type="number" id="alder" placeholder="Instast alder">
+						<br>
+						<a>Skostørrelse: </a>
+						<select id="storrelse">
+						</select>
+						<button onclick="opret_bruger()">opret</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script
+  			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+		
+		<script src="Javascript/index.js"></script>
+		
+		
+	</body>
+</html>
