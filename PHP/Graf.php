@@ -46,7 +46,7 @@
 		if($i < 1)
 		{$in += 1;}
 		imageline($img, 20, 390-(35 * $in), 790, 390-(35 * $in), $black);
-		imagettftext($img, 0, 390-(35 * $in), 790, 390-(35 * $in), $white, $font, $text); //----------------
+		imagettftext($img, 0, 390-(35 * $in), 790, 390-(35 * $in), $white, $font, $text); //--------------------
 		$in += 1;
 	}
 
